@@ -1,0 +1,16 @@
+name: Workflow git evaluacion practica
+
+on:
+  workflow_dispatch:
+    inputs:
+      mensaje:
+        description: "Mensaje de texto"
+        required: true
+        default: "Este es un mensaje"
+
+jobs:
+  mostrar-mensaje:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje
+        run: echo "Mensaje - ${{ github.event.inputs.mensaje }}"
